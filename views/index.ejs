@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>TODOLIST</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+            main {
+                flex: 1 0 auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="blue lighten-2">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo center">TODOLIST</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <br/>
+                <div class="container">
+                    <ul class="collection with-header">
+                        <li class="collection-header center">
+                            <h5>TO DO</h5>
+                        </li>
+                        <% for (var i = 0; i < todo.length; ++i) { %>
+                            <li class="collection-item">
+                                <div>
+                                    <%= todo[i] %>
+                                    <a href="/del/<%= i %>" class="secondary-content">
+                                        <i class="material-icons">delete_forever</i>
+                                    </a>
+                                </div>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <br/>
+                <div class="divider"></div>
+                <br/>
+                <div class="container">
+                    <h4>Add task: </h4>
+                    <form action="/add" method="post">
+                        <label for="task">Tache : </label>
+                        <input type="text" name="task" id="task" />
+                        <br/>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer blue lighten-2">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+                <p class="grey-text text-lighten-4 right">Made for fun</p>
+            </div>
+          </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" async defer></script>
+    <body>
+</html>
