@@ -1,4 +1,6 @@
 var express = require('express');
+const PORT = process.env.PORT || 8080
+
 var url = require('url');
 
 var app = express();
@@ -53,4 +55,4 @@ app.use(session({
 .use(function(req, res) {
     res.redirect("/");
 })
-.listen(8080);
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
